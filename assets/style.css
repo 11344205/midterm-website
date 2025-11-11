@@ -21,6 +21,7 @@ html, body
     display: flex;
     flex-direction: column;
 }
+
 /* 導覽列 */
 header 
 {
@@ -36,13 +37,19 @@ header
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 10px 10px;
     z-index: 9999;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    padding: 10px 40px 10px 20px;
+
 }
 header h1 
 {
     color: white;
-    font-size: 2rem;
+    font-size: clamp(20px, 3vw, 36px);
     font-weight: 500;
     margin: 0;
+    white-space: nowrap;
+    margin-left: 10px;
 }
 nav ul 
 {
@@ -51,16 +58,24 @@ nav ul
     gap: 30px;
     margin: 0;
     padding: 0;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    flex-shrink: 1; 
+}
+nav li
+{
+    flex-shrink: 1;
 }
 nav a 
 {
     background-color: #5d6843;
     color: white;
     text-decoration: none;
-    padding: 5px 20px;
+    padding: 6px 10px;
     border-radius: 6px;
-    font-size: 20px;
+    font-size: 18px;
     transition: all 0.3s ease;
+    white-space: nowrap; 
 }
 nav a:hover 
 {
@@ -312,7 +327,10 @@ circle
 .experience-card { width: 90%; }
 .profile { flex-direction: column; text-align: center; }
 .profile img { margin-right: 0; margin-bottom: 20px; }
+.header h1 { font-size:22px ;}
+.nav a{ font-size: 16px; padding: 4px 8px;}
 }
+
 
 /* 回到頂部按鈕 */
 .back-to-top 
