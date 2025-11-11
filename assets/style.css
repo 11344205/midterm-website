@@ -28,7 +28,7 @@ header
     position: fixed;
     top: 0;
     left: 0;
-    width: 95%;
+    width: 98%;
     background-color: #d8dec5;
     display: flex;
     justify-content: space-between;
@@ -366,4 +366,5 @@ footer
     color: #4b6043;
     font-size: 14px;
 }
+
 
