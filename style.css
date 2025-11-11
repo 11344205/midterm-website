@@ -1,0 +1,346 @@
+html 
+{
+    scroll-behavior: smooth;
+}
+body 
+{
+    margin: 0;
+    font-family: 微軟正黑體;
+    background-image: url('image/background.jpg');
+    background-repeat: repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: center top;
+    color: #3c3c3c;
+    padding-top: 100px;
+    padding-bottom: 120px;
+}
+
+/* 導覽列 */
+header 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    background-color: #d8dec5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
+    z-index: 9999;
+}
+header h1 
+{
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0;
+}
+nav ul 
+{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+nav a 
+{
+    background-color: #5d6843;
+    color: white;
+    text-decoration: none;
+    padding: 5px 20px;
+    border-radius: 6px;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+nav a:hover 
+{
+    background-color: #7e8b5b;
+    transform: scale(1.05);
+}
+
+/* 個人介紹區 */
+.intro 
+{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile 
+{
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    padding: 20px 40px;
+    width: 90%;
+}
+.profile img 
+{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center bottom;
+    border-radius: 50%;
+    margin-right: 120px;
+}
+.info 
+{
+    font-size: 20px;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    color: #3c3c3c;
+}
+.info h3 
+{
+    background-color: #4b6043;
+    color: white;
+    border-radius: 15px;
+    padding: 5px 15px;
+    display: inline-block;
+}
+.info-row 
+{
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    margin-bottom: 10px;
+}
+  
+.label 
+{
+    font-weight: bold;
+    color: #5a5038;
+    text-align: right;
+    padding-right: 10px;
+}
+  
+.value 
+{
+    text-align: left;
+}
+  
+.value a
+{
+    color: #3c3c3c;
+    text-decoration: underline;
+}
+  
+.value a:hover 
+{
+    color: #5d6843;
+}
+.icons img 
+{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 20%;
+    margin-right: 30px;
+}
+
+/* CSS技能區 */
+.skills 
+{
+    margin-top: 40px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+}
+.skills h2 
+{
+    background-color: #4b6043;
+    color: white;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 6px 20px;
+}
+.skill-container 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-top: 30px;
+    overflow-x: auto;
+}
+.skill-circles 
+{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+svg 
+{
+    transform: rotate(-90deg);
+}
+circle 
+{
+    fill: none;
+    stroke-width: 20;
+    transition: stroke-dashoffset 1.5s ease;
+}
+.circle01 
+{
+    stroke: #dcdcdc;
+}
+.circle02 
+{
+    stroke: #a08256;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    animation: draw 3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    will-change: stroke-dashoffset;
+    transform: translateZ(0);
+}
+.css    { animation-delay: 0.2s; }
+.js     { animation-delay: 0.4s; }
+.c      { animation-delay: 0.6s; }
+.html   { animation-delay: 0.8s; }
+.design { animation-delay: 1s; }
+
+@keyframes draw {
+0% { stroke-dashoffset: 440; }
+100% { stroke-dashoffset: var(--offset); }
+}
+
+.circle02.css    { --offset: calc(440 * (1 - 0.8)); }
+.circle02.js     { --offset: calc(440 * (1 - 0.6)); }
+.circle02.c      { --offset: calc(440 * (1 - 0.3)); }
+.circle02.html   { --offset: calc(440 * (1 - 0.7)); }
+.circle02.design { --offset: calc(440 * (1 - 0.95)); }
+
+.text 
+{
+    position: absolute;
+    text-align: center;
+}
+.text h2 
+{
+    margin: 0;
+    font-size: 20px;
+    color: #654f2d;
+    background: none;
+}
+.text p 
+{
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #654f2d;
+}
+
+/* 經歷區 */
+.experience-section 
+{
+    width: 90%;
+    margin: 60px auto;
+}
+.experience-section h2 
+{
+    background-color: #4b6043;
+    color: white;
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+.experience-row 
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.experience-card 
+{
+    width: 45%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.experience-card:hover 
+{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+.experience-card img 
+{
+    width: 100%;
+    height: 500px;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 15px;
+}
+.exp-text h3 
+{
+    color: #4b6043;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+.exp-text p 
+{
+    color: #333;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* 手機版 */
+@media (max-width: 768px) {
+.experience-row { flex-direction: column; align-items: center; }
+.experience-card { width: 90%; }
+.profile { flex-direction: column; text-align: center; }
+.profile img { margin-right: 0; margin-bottom: 20px; }
+}
+
+/* 回到頂部按鈕 */
+.back-to-top 
+{
+    position: fixed;
+    bottom: 25px;
+    right: 5px;
+    width: 80px;
+    height: 100px;
+    z-index: 10000;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.back-to-top img 
+{
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+.back-to-top:hover 
+{
+    transform: scale(1.08);
+    opacity: 0.9;
+}
+
+/* 頁尾 */
+footer 
+{
+    background-color: #d8dec5;
+    text-align: center;
+    padding: 10px;
+    color: #4b6043;
+    font-size: 14px;
+    margin-bottom: 60px
+}
